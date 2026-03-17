@@ -1,22 +1,22 @@
 <template>
     <div>
-        <h1 v-for="guy in trials" :key="guy.docket_id">{{ guy.intake_max_severity }}</h1>
+        <h1 v-for="asb in estos" :key="asb.tru">Case {{asb.tru}} had {{ asb.acm_amount }} asbestos</h1>
     </div>
 </template>
 
 <script setup>
-import { onMounted,ref } from 'vue'
-    const trials = ref([])
+import { onBeforeMount, onMounted,ref } from 'vue'
+    const estos = ref([])
     async function getdata() {
         try{
-        const res = await fetch("https://data.cityofnewyork.us/resource/atne-2dki.json")
+        const res = await fetch("https://data.cityofnewyork.us/resource/vq35-j9qm.json")
         const data = await res.json()
-        trials.value = data
+        estos.value = data
         } catch(err) {
             console.log(err)
         }
     }
-    onMounted(function(){
+    onBeforeMount(function(){
         getdata()
     })
 </script>
