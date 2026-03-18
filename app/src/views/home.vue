@@ -1,6 +1,7 @@
 <template>
     <div>
-        <h1 v-for="asb in estos" :key="asb.tru">Case {{asb.tru}} had {{ asb.acm_amount }} asbestos</h1>
+        <h1>Could You Survive This Much Asbestos?</h1>
+        <h1 v-for="asb in estos" :key="asb.tru">{{ asb.tru }} has {{ asb.acm_amount }} asbestos</h1>
     </div>
 </template>
 
